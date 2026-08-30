@@ -1,24 +1,36 @@
 # Reaction Kinetics Simulations
 
-Three chemical-engineering simulation projects implemented in Python:
+Three chemical-engineering simulation projects implemented in Python.
 
-1. **First-order reaction decay** - analytical concentration decay and half-life.
-2. **Arrhenius temperature dependence** - reaction-rate comparison from 280 K to 340 K.
-3. **Sequential reaction A -> B -> C** - species profiles and optimal time for maximizing intermediate B.
+## Project 1: First-Order Reaction Decay
 
-## Run
+Models the analytical concentration profile
+
+`C(t) = C0 exp(-kt)`
+
+for a batch reaction with `C0 = 1.0 mol/L` and `k = 0.1 s^-1`. The concentration falls exponentially, and the calculated half-life is **6.93 s**.
+
+![First-order reaction decay graph](project_1_first_order_decay.png)
+
+## Project 2: Arrhenius Temperature Dependence
+
+Uses the Arrhenius equation to compare first-order reaction rates at 280 K, 300 K, 320 K, and 340 K. Increasing the temperature from 280 K to 340 K raises the rate constant by approximately **44.3x**.
+
+The supplied kinetic constants imply sub-millisecond reactions, so the graph uses milliseconds to keep every curve visible.
+
+![Arrhenius temperature dependence graph](project_2_arrhenius_temperature.png)
+
+## Project 3: Sequential Reaction A to B to C
+
+Tracks reactant A, intermediate B, and final product C for consecutive first-order reactions. The intermediate reaches a maximum concentration of **0.500 mol/L at 13.86 s**, identifying the optimal stopping time when B is the desired product.
+
+![Sequential reaction concentration graph](project_3_sequential_reaction.png)
+
+## Run the simulations
 
 ```bash
 pip install -r requirements.txt
 python projects_1_to_3_reaction_kinetics.py
 ```
 
-The script creates PNG charts and CSV datasets under `results/`.
-
-## Main findings
-
-- First-order half-life: **6.93 s**
-- Rate increase from 280 K to 340 K: **44.3x**
-- Intermediate B peaks at **0.500 mol/L after 13.86 s**
-
-The Arrhenius plot uses a millisecond scale because the supplied kinetic parameters imply sub-millisecond reaction times.
+Running the script regenerates all three PNG charts and their CSV datasets under `results/projects_1_to_3/`.
