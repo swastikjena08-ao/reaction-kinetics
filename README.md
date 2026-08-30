@@ -1,6 +1,6 @@
 # Reaction Kinetics Simulations
 
-Three chemical-engineering simulation projects implemented in Python.
+Three engineering simulation projects implemented in Python.
 
 ## Project 1: First-Order Reaction Decay
 
